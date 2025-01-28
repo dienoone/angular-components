@@ -1,0 +1,27 @@
+.circle {
+  @apply w-10 h-10 rounded-full border-4 border-gray-200 bg-white flex items-center justify-center z-10;
+  transition: border 0.3s ease-in;
+}
+
+.active {
+  @apply border-blue-400;
+}
+
+.steps-container {
+  @apply relative;
+}
+
+.steps-container::before {
+  content: "";
+  @apply absolute top-1/2 -translate-y-1/2 bg-gray-200 h-1 w-full;
+}
+
+.progress {
+  @apply absolute top-1/2 -translate-y-1/2 bg-blue-400 h-1 w-[0%];
+  transition: width 0.3s ease-in;
+}
+
+.btn {
+  @apply bg-blue-400 text-white rounded-xl py-3 px-8;
+  @apply disabled:bg-gray-100 disabled:text-black disabled:cursor-not-allowed;
+}

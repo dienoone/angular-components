@@ -1,0 +1,31 @@
+<div class="flex flex-col items-center space-y-12">
+  <!-- steps -->
+  <div class="steps-container flex items-center justify-between gap-32">
+    <div
+      [appProgressSteps]="currentStep"
+      [steps]="steps.length"
+      class="progress"
+      id="progress"
+    ></div>
+
+    @for (step of steps; track $index) {
+    <div class="circle" [class.active]="$index < currentStep">
+      {{ $index + 1 }}
+    </div>
+    }
+  </div>
+
+  <!-- buttons -->
+  <div class="space-x-16">
+    <button class="btn" [disabled]="currentStep === 1" (click)="prev()">
+      Prev
+    </button>
+    <button
+      class="btn"
+      [disabled]="currentStep === steps.length"
+      (click)="next()"
+    >
+      Next
+    </button>
+  </div>
+</div>
