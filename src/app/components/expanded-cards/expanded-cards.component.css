@@ -1,0 +1,32 @@
+.panel {
+  @apply relative rounded-3xl overflow-hidden shadow-lg;
+  height: 80vh;
+  flex: 0.5;
+  cursor: pointer;
+  transition: flex 0.7s ease-in;
+}
+
+.panel img {
+  @apply w-full h-full object-cover;
+}
+
+.panel p {
+  @apply absolute left-5 bottom-5 text-3xl font-semibold text-white uppercase opacity-0;
+}
+
+.active {
+  flex: 5;
+  cursor: default;
+}
+
+.panel.active p {
+  @apply opacity-100;
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 480px) {
+  .panel:nth-of-type(4),
+  .panel:nth-of-type(5) {
+    display: none;
+  }
+}
